@@ -17,6 +17,7 @@ class HUGENUMBERLIBRARY_API HugeNumber:public vector<bool>
 		typedef vector<bool>::_Vectype::_Myt::value_type _MyWord;
 		typedef vector<bool>::_Vectype::iterator _MyWordIterator;
 		static bool AddBit(_MyWord& Word, _MyWord Bit);
+		bool AddBit(int Bit);
 		static bool SubtractBit(_MyWord& Word, _MyWord Bit);
 		void AddWord(_MyWordIterator Dest, _MyWord W);
 		void SubtractWord(_MyWordIterator Dest, _MyWord W);
@@ -119,6 +120,8 @@ class HUGENUMBERLIBRARY_API HugeNumber:public vector<bool>
 
 		friend HugeNumber HUGENUMBERLIBRARY_API operator +(const HugeNumber& Left, const HugeNumber& Right);
 
+		HugeNumber& operator +=(const HugeNumber& Right);
+
 		friend HugeNumber HUGENUMBERLIBRARY_API operator -(const HugeNumber& Left, const HugeNumber& Right);
 
 		HugeNumber operator -() const
@@ -179,6 +182,23 @@ inline bool HugeNumber::AddBit(_MyWord& Word, _MyWord Bit)
 	_MyWord sBit=Bit<<1;
 	Word^=Bit|sBit;
 	return (Word&sBit)!=0;
+	}
+
+inline bool HugeNumber::AddBit(int Bit)
+	{
+	if(!operator[](Bit))
+		{
+		operator[](Bit)=true;
+		return false;
+		}
+	operator[](Bit)=false;
+	if(operator[](Bit+1))
+		{
+		operator[](Bit+1)=false;
+		return false;
+		}
+	operator[](Bit+1)=true;
+	return Bit+2 == size()?false:true;
 	}
 
 inline bool HugeNumber::SubtractBit(_MyWord& Word, _MyWord Bit)

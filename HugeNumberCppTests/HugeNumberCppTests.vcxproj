@@ -167,7 +167,7 @@
     <ClCompile Include="HugeNumberTest.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\HugeNumberLib\HubeNumberLib.vcxproj">
+    <ProjectReference Include="..\HugeNumberLib\HugeNumberLib.vcxproj">
       <Project>{3576af1a-99fa-457e-9fbd-9686ecba8788}</Project>
     </ProjectReference>
   </ItemGroup>

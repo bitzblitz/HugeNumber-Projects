@@ -85,14 +85,16 @@ namespace HugeNumberCppTests
 					Assert::AreEqual(a+b, static_cast<int>(z), L"Addition failed.", LINE_INFO());
 					Assert::AreEqual(a+b, static_cast<int>(y+x), L"Addition failed.", LINE_INFO());
 					}
-				for(int i = 0;i < 100;++i)
+				for(int i = 0;i < 1000;++i)
 					{	// big numbers
 					long long a=rand()*numeric_limits<int>::max();
 					long long b=rand()*rand()*numeric_limits<int>::max();
 					HugeNumber x(a);
 					HugeNumber y(b);
 					HugeNumber z=x+y;
-					Assert::AreEqual(0, static_cast<int>(static_cast<long long>(z)-(a+b)), L"Addition failed.", LINE_INFO());
+					wstringstream msg;
+					msg<<L"Addition with "<<a<<L" and "<<b<<L" failed.";
+					Assert::AreEqual(0, static_cast<int>(static_cast<long long>(z)-(a+b)), msg.str().c_str(), LINE_INFO());
 					}
 				for(int i = 0;i < 100;++i)
 					{
@@ -101,8 +103,8 @@ namespace HugeNumberCppTests
 					HugeNumber x(a);
 					HugeNumber y(b);
 					HugeNumber z=x+y;
-					Assert::AreEqual(a+b, static_cast<int>(z), L"Addition failed.", LINE_INFO());
-					Assert::AreEqual(a+b, static_cast<int>(y+x), L"Addition failed.", LINE_INFO());
+					Assert::AreEqual(a+b, static_cast<int>(z), L"Addition with negatives failed.", LINE_INFO());
+					Assert::AreEqual(a+b, static_cast<int>(y+x), L"Addition with negatives failed.", LINE_INFO());
 					}
 				int v=rand();
 				HugeNumber x(v);

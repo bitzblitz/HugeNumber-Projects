@@ -11,7 +11,7 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "HugeNumberCPP", "HugeNumber
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "HugeNumberCppTests", "HugeNumberCppTests\HugeNumberCppTests.vcxproj", "{00AC6316-4CFA-4E74-8B19-F44CC0824CC5}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "HugeNumberLib", "HugeNumberLib\HubeNumberLib.vcxproj", "{3576AF1A-99FA-457E-9FBD-9686ECBA8788}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "HugeNumberLib", "HugeNumberLib\HugeNumberLib.vcxproj", "{3576AF1A-99FA-457E-9FBD-9686ECBA8788}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

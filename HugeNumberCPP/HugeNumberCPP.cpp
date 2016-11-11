@@ -45,6 +45,15 @@ int main()
 	HugeNumber D=A+B;
 	HugeNumber E(63583541);
 	cout<<static_cast<string>(A)<<endl<<static_cast<string>(B)<<endl<<static_cast<string>(C)<<endl<<static_cast<string>(D)<<endl<<static_cast<string>(E)<<endl;
+	ex_a=-30100;
+	A=ex_a;
+	ex_b=-695106;
+	B=ex_b;
+	cout<<"Addition test:\n";
+	cout<<static_cast<string>(A)<<" ("<<static_cast<long long>(A)<<")"<<endl<<static_cast<string>(B)<<" ("<<static_cast<long long>(B)<<")"<<endl;
+	C=A+B;
+	D=ex_a+ex_b;
+	cout<<static_cast<string>(C)<<" ("<<static_cast<long long>(C)<<")"<<endl<<static_cast<string>(D)<<" ("<<static_cast<long long>(D)<<")"<<endl;
 	cout<<"It all adds up to nothing..."<<endl;
 	//A=numeric_limits<int>::max();
 	A=439571010;
@@ -52,7 +61,7 @@ int main()
 	//D=-numeric_limits<int>::max();
 	D=A-A;
 	cout<<static_cast<string>(A)<< " ("<<static_cast<long long>(A)<<")" <<endl<<static_cast<string>(B)<<" ("<<static_cast<long long>(B)<<")"<<endl;
-	cout<<static_cast<string>(A)<< " ("<<static_cast<int>(A)<<")" <<endl<<static_cast<string>(B)<<" ("<<static_cast<int>(B)<<")"<<endl<<static_cast<string>(D)<<"<"<<endl;
+	cout<<static_cast<string>(D)<<"< ("<<static_cast<long long>(D)<<")"<<endl;
 	//cout<<endl<<endl<<static_cast<int>(D)<<"<"<<endl;
 	ex_a=2147481817;
 	A=ex_a;
@@ -63,6 +72,7 @@ int main()
 	C=A-B;
 	D=A.ToInt()-B.ToInt();
 	cout<<static_cast<string>(C)<<" ("<<static_cast<long long>(C)<<")"<<endl<<static_cast<string>(D)<<" ("<<static_cast<long long>(D)<<")"<<endl;
+	getchar();
 	return 0;
 	}
 

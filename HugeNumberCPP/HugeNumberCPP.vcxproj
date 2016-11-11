@@ -173,6 +173,9 @@
     <ProjectReference Include="..\HugeNumberLib\HubeNumberLib.vcxproj">
       <Project>{3576af1a-99fa-457e-9fbd-9686ecba8788}</Project>
     </ProjectReference>
+    <ProjectReference Include="..\HugeNumberLib\HugeNumberLib.vcxproj">
+      <Project>{3576af1a-99fa-457e-9fbd-9686ecba8788}</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

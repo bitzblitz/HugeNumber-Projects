@@ -139,7 +139,7 @@ namespace HugeNumberTest
 				HugeNumber z = x + y;
 				Assert.AreEqual(0, (z).ToLong() - (a + b), "Addition failed.");
 				}
-			for(int i = 0;i < 100;++i)
+			for(int i = 0;i < 1000;++i)
 				{
 				int a = -rnd.Next(short.MaxValue);  // test with negatives
 				int b = rnd.Next(short.MaxValue) * rnd.Next(short.MaxValue);
