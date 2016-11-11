@@ -117,6 +117,44 @@ namespace HugeNumberTest
 			}
 
 		[TestMethod]
+		public void TestAddPerformance()
+			{
+			Random rnd = new Random(23);
+			for(int i = 0;i < 100;++i)
+				{
+				int a = rnd.Next(short.MaxValue);
+				int b = rnd.Next() * rnd.Next(short.MaxValue);
+				HugeNumber x = new HugeNumber(a);
+				HugeNumber y = new HugeNumber(b);
+				HugeNumber z = x + y;
+				Assert.AreEqual(a + b, z.ToLong(), "Addition failed.");
+				Assert.AreEqual(a + b, (y + x).ToLong(), "Addition failed.");
+				}
+			for(int i = 0;i < 100;++i)
+				{ // big numbers
+				long a = rnd.Next(short.MaxValue) * int.MaxValue;
+				long b = rnd.Next(short.MaxValue) * rnd.Next(short.MaxValue) * int.MaxValue;
+				HugeNumber x = new HugeNumber(a);
+				HugeNumber y = new HugeNumber(b);
+				HugeNumber z = x + y;
+				Assert.AreEqual(0, (z).ToLong() - (a + b), "Addition failed.");
+				}
+			for(int i = 0;i < 100;++i)
+				{
+				int a = -rnd.Next(short.MaxValue);  // test with negatives
+				int b = rnd.Next(short.MaxValue) * rnd.Next(short.MaxValue);
+				HugeNumber x = new HugeNumber(a);
+				HugeNumber y = new HugeNumber(b);
+				HugeNumber z = x + y;
+				Assert.AreEqual(a + b, z.ToLong(), "Addition failed.");
+				Assert.AreEqual(a + b, (y + x).ToLong(), "Addition failed.");
+				}
+			int v = rnd.Next(short.MaxValue);
+			HugeNumber V = new HugeNumber(v);
+			Assert.AreEqual(0, (V + V.Negate()).ToLong(), "Addition to 0 failed.");
+			}
+
+		[TestMethod]
 		public void TestSubtract()
 			{
 			HugeNumber eleven = new HugeNumber() { true, true, true, true, true };
