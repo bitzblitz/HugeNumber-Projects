@@ -21,7 +21,7 @@
   <PropertyGroup Label="Globals">
     <ProjectGuid>{3576AF1A-99FA-457E-9FBD-9686ECBA8788}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>HubeNumberLib</RootNamespace>
+    <RootNamespace>HugeNumberLib</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.14393.0</WindowsTargetPlatformVersion>
     <ProjectName>HugeNumberLib</ProjectName>
   </PropertyGroup>
